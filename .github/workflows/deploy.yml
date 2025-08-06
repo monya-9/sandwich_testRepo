@@ -45,7 +45,7 @@ jobs:
         run: aws s3 sync build/ s3://${{ env.S3_BUCKET }}/${{ secrets.USER_ID }}/${{ secrets.PROJECT_ID }} --acl public-read
 
       - name: Invalidate CloudFront cache
-        uses: chetan/invalidate-cloudfront-action@v1
+        uses: uses: aws-actions/cloudfront-invalidate@v1
         with:
           distribution-id: ${{ secrets.SANDWICH_USER_CLOUDFRONT_DISTRIBUTION_ID }}
           paths: "/${{ secrets.USER_ID }}/${{ secrets.PROJECT_ID }}/*"
