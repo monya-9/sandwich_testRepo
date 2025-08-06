@@ -1,0 +1,3 @@
+{
+  "buildCommand": "mkdir -p build && echo 'dummy content' > build/index.html"
+}
