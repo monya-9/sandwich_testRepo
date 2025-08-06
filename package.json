@@ -4,7 +4,8 @@
   "description": "https://github.com/monya-9/Sandwich.git\r Sandwich 사이트 테스트용입니다.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "echo \"✅ 빌드 성공! (테스트용)\""
   },
   "repository": {
     "type": "git",
