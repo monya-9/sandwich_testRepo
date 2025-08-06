@@ -47,7 +47,7 @@
           - name: Invalidate CloudFront cache
             uses: chetan/invalidate-cloudfront-action@v1
             with:
-               : create-invalidation --distribution-id $DISTRIBUTION --paths $PATHS
+              args: create-invalidation --distribution-id $DISTRIBUTION --paths $PATHS
             env:
               AWS_ACCESS_KEY_ID: ${{ secrets.SANDWICH_USER_AWS_ACCESS_KEY_ID }}
               AWS_SECRET_ACCESS_KEY: ${{ secrets.SANDWICH_USER_AWS_SECRET_ACCESS_KEY }}
