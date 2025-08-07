@@ -45,14 +45,10 @@
             run: aws s3 sync build/ s3://${{ env.S3_BUCKET }}/${{ secrets.USER_ID }}/${{ secrets.PROJECT_ID }} --acl public-read
 
           - name: Invalidate CloudFront cache
-            uses: chetan/invalidate-cloudfront-action@v2
-            with:
-              distribution: ${{ secrets.SANDWICH_USER_CLOUDFRONT_DISTRIBUTION_ID }}
-              paths: "/${{ secrets.USER_ID }}/${{ secrets.PROJECT_ID }}/*"
-            env:
-               AWS_ACCESS_KEY_ID: ${{ secrets.SANDWICH_USER_AWS_ACCESS_KEY_ID }}
-               AWS_SECRET_ACCESS_KEY: ${{ secrets.SANDWICH_USER_AWS_SECRET_ACCESS_KEY }}
-               AWS_REGION: ap-northeast-2
+            run: |
+              aws cloudfront create-invalidation \
+              --distribution-id ${{ secrets.SANDWICH_USER_CLOUDFRONT_DISTRIBUTION_ID }} \
+              --paths "/${{ secrets.USER_ID }}/${{ secrets.PROJECT_ID }}/*"
 
 
 
