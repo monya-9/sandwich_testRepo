@@ -10,7 +10,7 @@
       S3_BUCKET: sandwich-user-projects
       USER_ID: ${{ secrets.USER_ID }}
       PROJECT_ID: ${{ secrets.PROJECT_ID }}
-      PIPELINE_NAME: "sandwich-${{ env.USER_ID }}-${{ env.PROJECT_ID }}-pipeline"
+      PIPELINE_NAME: "sandwich-${{ secrets.USER_ID }}-${{ secrets.PROJECT_ID }}-pipeline"
 
     jobs:
       build-and-deploy:
