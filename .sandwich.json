@@ -1,0 +1,5 @@
+    {
+      "frontendBuildCommand": "npm run build",
+      "backendBuildCommand": "./gradlew build"
+      "outputDirectory": "build"
+    }
